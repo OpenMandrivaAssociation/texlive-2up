@@ -1,5 +1,11 @@
+# revision 18310
+# category Package
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-2up
-Version:	20111101
+Version:	20111103
 Release:	1
 Summary:	TeXLive 2up package
 Group:		Publishing
@@ -41,6 +47,7 @@ TeXLive 2up package.
 %doc %{_texmfdistdir}/doc/generic/2up/Changes
 %doc %{_texmfdistdir}/doc/generic/2up/Makefile
 %doc %{_texmfdistdir}/doc/generic/2up/README
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ TeXLive 2up package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
