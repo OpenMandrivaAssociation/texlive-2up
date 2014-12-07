@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-2up
 Version:	20111103
-Release:	9
+Release:	10
 Summary:	TeXLive 2up package
 Group:		Publishing
 URL:		http://tug.org/texlive
