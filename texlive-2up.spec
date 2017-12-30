@@ -1,9 +1,3 @@
-# revision 18310
-# category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-2up
 Version:	20170414
 Release:	1
