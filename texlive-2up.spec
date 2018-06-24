@@ -1,5 +1,5 @@
 Name:		texlive-2up
-Version:	20170414
+Version:	20180303
 Release:	1
 Summary:	TeXLive 2up package
 Group:		Publishing
