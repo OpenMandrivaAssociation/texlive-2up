@@ -1,6 +1,6 @@
 Name:		texlive-2up
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	TeXLive 2up package
 Group:		Publishing
 URL:		http://tug.org/texlive
