@@ -1,43 +1,24 @@
-Name:		texlive-2up
-Version:	55076
-Release:	2
-Summary:	TeXLive 2up package
+%global tl_name 2up
+%global tl_revision 55076
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.3a
+Release:	%{tl_revision}.1
+Summary:	Macros to print two-up
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/2up.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/2up.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/generic/2up
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/2up.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/2up.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive 2up package.
+The 2up package offers considerable flexibility as to paper size and
+layout, and produces a standard dvi file without involving additional
+dvi or PostScript filters.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/2up/2up.sty
-%{_texmfdistdir}/tex/generic/2up/2up.tex
-%doc %{_texmfdistdir}/doc/generic/2up/2up-doc.pdf
-%doc %{_texmfdistdir}/doc/generic/2up/2up-doc.tex
-%doc %{_texmfdistdir}/doc/generic/2up/Changes
-%doc %{_texmfdistdir}/doc/generic/2up/README
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
